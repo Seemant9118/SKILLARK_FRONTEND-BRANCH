@@ -32,9 +32,22 @@ import EnrollCourse from './user/EnrollCourse';
 import Toast from './context/Toast'
 import ContextApp from './context/ContextApp';
 import UploadImage from './context/UploadImage';
+//MCQ 1
 import McqHome from './mcq/McqHome';
 import Tests from './mcq/Tests';
 import Result from './mcq/Result';
+//MCQ 2
+import McqHometwo from './mcq_2/McqHometwo';
+import Teststwo from './mcq_2/Teststwo';
+import Resulttwo from './mcq_2/Resulttwo';
+//MCQ 3 
+import McqHomethree from './mcq_3/McqHomethree'
+import Teststhree from './mcq_3/Teststhree';
+import Resultthree from './mcq_3/Resultthree';
+//MCQ 4
+import McqHomefour from './mcq_4/McqHomefour'
+import Testsfour from './mcq_4/Testsfour';
+import Resultfour from './mcq_4/Resultfour';
 
 export default function App() {
   return (
@@ -71,10 +84,25 @@ export default function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Route>
-            {/* MCQ */}
+            {/* MCQ 1 */}
             <Route path="" element={<McqHome />} >
               <Route path="/test" element={<Tests />} />
               <Route path="/result" element={<Result />} />
+            </Route>
+            {/* MCQ 2 */}
+            <Route path="" element={<McqHometwo />} >
+              <Route path="/testtwo" element={<Teststwo />} />
+              <Route path="/resulttwo" element={<Resulttwo />} />
+            </Route>
+            {/* MCQ 3 */}
+            <Route path="" element={<McqHomethree />} >
+              <Route path="/testthree" element={<Teststhree />} />
+              <Route path="/resultthree" element={<Resultthree />} />
+            </Route>
+            {/* MCQ 4 */}
+            <Route path="" element={<McqHomefour />} >
+              <Route path="/testfour" element={<Testsfour />} />
+              <Route path="/resultfour" element={<Resultfour />} />
             </Route>
 
 

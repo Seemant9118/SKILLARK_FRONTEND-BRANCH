@@ -1,0 +1,16 @@
+@media screen and (max-width:420px) {
+    #Logo{
+        /* border: 1px solid rgb(190, 209, 13); */
+        position: relative;
+        right: 28px;
+    }
+    
+}
+
+@media screen and (max-width:820px) {
+    #Logo{
+        /* border: 1px solid saddlebrown ; */
+        position: relative;
+        right: 95px;
+    }
+}

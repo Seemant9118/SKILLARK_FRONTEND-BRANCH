@@ -1,0 +1,14 @@
+/* media screen for test section */
+@media screen and (max-width:700px) {
+    .col-2 .btn-ska-primary {
+        position: relative;
+        right: 8px;
+    }
+}
+
+@media screen and (min-width:300px) {
+    #n-btn {
+        position: relative;
+        right: 45px;
+    }
+}

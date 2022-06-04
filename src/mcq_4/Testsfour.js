@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logoimage from '../components/img/style/logo.png';
-import Question from './Question';
-import quizJSON from './quizJSON';
+import Questionfour from '../mcq_4/Questionfour';
+import quizJSONfour from '../mcq_4/quizJSONfour';
 import { toastContext } from '../context/skaContext'
 import Axios from 'axios';
 import PrivateData from '../components/data/PrivateData';
@@ -22,7 +22,7 @@ export default function Tests() {
   const noti = useContext(toastContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
-  const [timer, setTimer] = useState({ mint: quizJSON.duration, sec: 1 });
+  const [timer, setTimer] = useState({ mint: quizJSONfour.duration, sec: 1 });
   var time;
   useEffect(() => {
     if (sessionStorage.getItem('email')) {
@@ -48,7 +48,7 @@ export default function Tests() {
   })
   const [questionNum, setquestionNum] = useState(0);
   const handleQuestionNum = (n) => {
-    if (n >= 0 && n < quizJSON.questions.length) {
+    if (n >= 0 && n < quizJSONfour.questions.length) {
       setquestionNum(n)
     }
   }
@@ -97,14 +97,14 @@ export default function Tests() {
       finishmark.push(element.M)
     });
     totalMarkgot = finishmark.reduce((a, b) => parseInt(a) + parseInt(b));
-    percentGot = (totalMarkgot / quizJSON.maxMarks) * 100;
+    percentGot = (totalMarkgot / quizJSONfour.maxMarks) * 100;
     handleSubmmit();
   }
   const handleSubmmit = () => {
-    let timeTaken = quizJSON.duration - timer.mint;
+    let timeTaken = quizJSONfour.duration - timer.mint;
     Axios.post(`${PrivateData.IP}/exam/userassesment`,
       {
-        assesmentTotalMarks: quizJSON.maxMarks,
+        assesmentTotalMarks: quizJSONfour.maxMarks,
         assesmentGainedMarks: totalMarkgot,
         assesmentPerformancePercentage: percentGot,
         selectedOption: finalAnss,
@@ -116,7 +116,7 @@ export default function Tests() {
           noti.addNewMessage('Test Done', 'success');
           navigate('/');
         } else {
-          noti.addNewMessage('Something went wrongh', 'danger');
+          noti.addNewMessage('Something went wrong', 'danger');
         }
       })
   }
@@ -128,7 +128,7 @@ export default function Tests() {
             <Link className="nav-link" to='/event'>Home</Link>
           </li>
           <li className="nav-item mx-1">
-            <Link className="nav-link" to='/test'>Details</Link>
+            <Link className="nav-link" to='/testfour'>Details</Link>
           </li>
         </ul>
       </div>
@@ -158,7 +158,7 @@ export default function Tests() {
     <div className='row m-0'>
       <div className='col-3 p-4' style={{ height: '80vh', overflow: 'auto' }}>
         <div className='row justify-content-center'>
-          {quizJSON.questions.map((item, index) => {
+          {quizJSONfour.questions.map((item, index) => {
             return <div className='col-lg-3 col-md-4 col-sm-6'>
               <button style={testButton} onClick={() => handleQuestionNum(item.id - 1)}
                 className={attempt.includes(index) ? `bg-ska-primary bg-opacity-75` : (seen.includes(index) ? `bg-warning bg-opacity-75` : ``)}
@@ -170,8 +170,8 @@ export default function Tests() {
       <div className='col-9 ska-bg'>
         <div className='row justify-content-center'>
           <div className='col-10'>
-            <Question
-              data={quizJSON.questions[questionNum]}
+            <Questionfour
+              data={quizJSONfour.questions[questionNum]}
               questionNum={questionNum}
               handleQuestionNum={handleQuestionNum}
               handleMarks={handleMarks}
