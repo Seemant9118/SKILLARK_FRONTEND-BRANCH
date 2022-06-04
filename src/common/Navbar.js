@@ -35,7 +35,7 @@ export default function Navbar() {
                                     <Link className="nav-link" to='/contactus'>Contact Us</Link>
                                 </li>
                                 <li className="nav-item mx-1">
-                                    <Link className="nav-link" to='/event'>Event</Link>
+                                    <Link className="nav-link" to='/event'>Test</Link>
                                 </li>
                                 {!sessionStorage.getItem('login') && <li className="nav-item">
                                     <Link className="nav-link" to='/login'>Log In</Link>

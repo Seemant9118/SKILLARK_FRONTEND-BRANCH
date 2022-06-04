@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import '../mcq/Question.css'
+import  '../mcq/Question.css'
+
 export default function Question(props) {
     useEffect(() => {
         setSelected('')
@@ -41,19 +42,18 @@ export default function Question(props) {
                     </div>
                 </div>
             </div>
-            {/* Here id Kaha daalni hai - ?? */}
-            <div  className='col-md-9'>
+            <div className='col-md-9'>
                 <div className='ska-box bg-ska-primary mb-2 mt-0'>
                     <div className='row justify-content-between'>
                         <div className='col-2'>
-                            <button id='p-btn' className="btn btn-ska-primary text-white fw-bold px-4"
+                            <button className="btn btn-ska-primary text-white fw-bold px-4"
                                 onClick={() => props.handleQuestionNum(props.questionNum - 1)}>Previous</button>
                         </div>
-                        <div  className='col-3'>
+                        <div className='col-3'>
                             <button className="btn btn-outline-ska-primary fw-bolder px-4" disabled={selected === '' ? "true" : ""}
                                 onClick={() => props.handleMarks(props.questionNum, selected, props.data.options[selected].value)}>Save and Next</button>
                         </div>
-                        <div  className='col-2'>
+                        <div className='col-2'>
                             <button id='n-btn' className="btn btn-ska-primary text-white fw-bold px-4"
                                 onClick={() => props.handleQuestionNum(props.questionNum + 1)}>Next</button>
                         </div>

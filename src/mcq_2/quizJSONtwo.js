@@ -7,12 +7,11 @@ const quizJSON = {
     duration: '30',
     testType: 'Either assesment or Assignment, String ',
     questions: [
-    
         // question1
         {
             id: '01',
             questionCode: 'QUE-1',
-            question: `The Command do you use to create Linux file system is`,
+            question: `The Command - 2 do you use to create Linux file system is`,
             image: '',
             options: [{
                 option: 'fsck',
